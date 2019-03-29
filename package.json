@@ -1,0 +1,26 @@
+{
+  "name": "@edsdk/flmngr",
+  "version": "1.0.0",
+  "description": "File manager SDK for your application or website",
+  "main": "./dist/flmngr.js",
+  "types": "./dist/flmngr.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build"
+  },
+  "author": "https://flmngr.com/",
+  "license": "Commercial EdSDK license",
+  "devDependencies": {
+    "@types/node": "^11.9.4",
+    "typescript": "3.3.4000"
+  },
+  "keywords": [
+    "edsdk",
+    "file-manager",
+    "file",
+    "image",
+    "manager",
+    "client",
+    "imgpen"
+  ]
+}
