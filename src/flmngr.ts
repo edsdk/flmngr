@@ -32,6 +32,7 @@ export function openFlmngr(
 ) {
     if (!conf.useImageEditor)
         conf.useImageEditor = false;
+    (conf as any).funcUploader = require("./uploaderForFlmngr").default;
     preload(
         conf.useImageEditor,
         () => {
@@ -44,10 +45,9 @@ export function preload(useImageEditor: boolean, onLoaded?: () => void) {
     includeJS(
         '//cdn.flmngr.com/flmngr.js',
         () => {
+            onLoaded && onLoaded();
             if (useImageEditor)
-                preloadImgPen(onLoaded);
-            else
-                onLoaded && onLoaded();
+                preloadImgPen();
         }
     );
 }

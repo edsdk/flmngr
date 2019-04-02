@@ -1,19 +1,15 @@
 {
   "name": "@edsdk/flmngr",
-  "version": "1.0.1",
+  "version": "1.0.8",
   "description": "File manager SDK for your application or website",
   "main": "./dist/flmngr.js",
   "types": "./dist/flmngr.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "webpack",
     "prepublish": "npm run build"
   },
   "author": "https://flmngr.com/",
   "license": "Commercial EdSDK license",
-  "devDependencies": {
-    "@types/node": "^11.9.4",
-    "typescript": "3.3.4000"
-  },
   "keywords": [
     "edsdk",
     "file-manager",
@@ -24,6 +20,23 @@
     "imgpen"
   ],
   "dependencies": {
-    "@edsdk/imgpen": "^1.0.7"
+    "@edsdk/imgpen": "^1.0.8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@types/node": "^11.13.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.4.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   }
 }
