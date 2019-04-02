@@ -1,3 +1,5 @@
+import {preload as preloadImgPen} from "@edsdk/imgpen";
+
 export interface IFile {
 	name: string;
 	fullPath: string;
@@ -16,6 +18,7 @@ export function openFlmngr(
             files: IFile[]
         ) => void
 
+        useImageEditor?: boolean, // you need to have license for ImgPen too in order to use it
         onlyImages?: boolean,
         isMultiple?: boolean,
         showOkCancelButtons?: boolean,
@@ -27,17 +30,24 @@ export function openFlmngr(
         isIconsView?: true,
     }
 ) {
-    preload(() => {
-        (window as any).Flmngr.openFlmngr(conf);
-    });
+    if (!conf.useImageEditor)
+        conf.useImageEditor = false;
+    preload(
+        conf.useImageEditor,
+        () => {
+            (window as any).Flmngr.openFlmngr(conf);
+        }
+    );
 }
 
-export function preload(onLoaded?: () => void) {
+export function preload(useImageEditor: boolean, onLoaded?: () => void) {
     includeJS(
         '//cdn.flmngr.com/flmngr.js',
         () => {
-            if (onLoaded)
-                onLoaded();
+            if (useImageEditor)
+                preloadImgPen(onLoaded);
+            else
+                onLoaded && onLoaded();
         }
     );
 }
