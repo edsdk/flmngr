@@ -28,6 +28,7 @@ export function openFlmngr(
         branding?: boolean,
         maxFolderTreeWidth?: boolean,
         isIconsView?: true,
+        selectedFiles?: string[]
     }
 ) {
     if (!conf.useImageEditor)
@@ -41,7 +42,7 @@ export function openFlmngr(
     );
 }
 
-export function preload(useImageEditor: boolean, onLoaded?: () => void) {
+export function preload(useImageEditor: boolean = true, onLoaded?: () => void) {
     includeJS(
         '//cdn.flmngr.com/flmngr.js',
         () => {

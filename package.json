@@ -1,6 +1,6 @@
 {
   "name": "@edsdk/flmngr",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "File manager SDK for your application or website",
   "main": "./dist/flmngr.js",
   "types": "./dist/flmngr.d.ts",
@@ -20,7 +20,8 @@
     "imgpen"
   ],
   "dependencies": {
-    "@edsdk/imgpen": "^1.0.8"
+    "@edsdk/imgpen": "^1.0.8",
+    "tar": ">=4.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
