@@ -1,43 +1,35 @@
 {
-  "name": "@edsdk/flmngr",
-  "version": "1.0.10",
-  "description": "File manager SDK for your application or website",
-  "main": "./dist/flmngr.js",
-  "types": "./dist/flmngr.d.ts",
-  "scripts": {
-    "build": "webpack",
-    "prepublish": "npm run build"
-  },
-  "author": "https://flmngr.com/",
-  "license": "Commercial EdSDK license",
+  "name": "flmngr",
+  "version": "2.0.0",
+  "description": "Flmngr file manager (Local disk / Amazon S3 / Azure Blob)",
+  "author": "https://flmngr.com",
+  "license": "LGPL-3.0-or-later",
+  "main": "dist/index.js",
   "keywords": [
-    "edsdk",
-    "file-manager",
+    "flmngr",
     "file",
-    "image",
+    "files",
     "manager",
-    "client",
-    "imgpen"
+    "imgpen",
+    "image",
+    "editor",
+    "upload",
+    "unsplash",
+    "amazon",
+    "s3",
+    "azure",
+    "blob"
   ],
-  "dependencies": {
-    "@edsdk/imgpen": "^1.0.8",
-    "tar": ">=4.4.2"
-  },
   "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@types/node": "^11.13.0",
-    "babel-loader": "^8.0.5",
-    "css-loader": "^2.1.1",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.11.0",
-    "nodemon": "^1.18.10",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "ts-loader": "^5.3.3",
-    "typescript": "^3.4.1",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.2.1"
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "scripts": {
+    "build": "node ./node_modules/webpack-cli/bin/cli.js"
+  },
+  "dependencies": {
+    "mime": "^3.0.0"
   }
 }
