@@ -434,3 +434,5 @@ export class Flmngr {
 
 
 }
+
+export default Flmngr;
