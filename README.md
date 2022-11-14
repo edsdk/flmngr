@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-    <a href="https://flmngr.com/">Home</a>&nbsp;&nbsp;∙&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://flmngr.com/doc/install-npm-package/">Install</a>&nbsp;&nbsp;∙&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://flmngr.com/doc/api">API with samples</a>
+    <a href="https://flmngr.com/">Website</a>&nbsp;&nbsp;∙&nbsp;&nbsp;&nbsp;&nbsp;<a href="#install">Install</a>&nbsp;&nbsp;∙&nbsp;&nbsp;&nbsp;&nbsp;<a href="#sample">API with samples</a>
 </p>
 
 [![Flmngr file manager screenshot](https://flmngr.com/img/browsing.jpg)](https://flmngr.com)
@@ -30,7 +30,9 @@ You can use Flmngr in any application from custom ones (by using this **NPM pack
 
 Flmngr is so flexible that has integration for popular CMSs like **Drupal** and WYSIWYG editors such as **TinyMCE**, **CKEditor 4**, and **CKEditor 5**.
 
-## Install
+<h2 id="install">Install</h2>
+
+Full [installation manual](https://flmngr.com/doc/install-npm-package) is available on official website.
 
 Using NPM:
 
@@ -44,9 +46,11 @@ Using Yarn:
 yarn add flmngr
 ```
 
-## Sample
+<h2 id="sample">Sample</h2>
 
-The sample of just one feature - to open a file manager to select a single file. See [more samples](https://flmngr.com/doc/api).
+[API reference and samples](https://flmngr.com/doc/api) are available on official website.
+
+Here is a sample of just one feature - to open a file manager to select a single file.
 
 ```js
 import {Flmngr} from "flmngr";
@@ -57,7 +61,7 @@ Flmngr.open({
     urlFiles: 'https://fm.flmngr.com/files',             // demo file storage
     
     onFinish: (files) => {
-        console.log("User picked:")
+        console.log("User picked:");
         console.log(files);
     }
 });

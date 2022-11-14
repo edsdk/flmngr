@@ -41,9 +41,9 @@ interface FlmngrCreateParams extends FlmngrLoadParams {
 
     apiKey?: string; // you may omit it if you have already called Flmngr.load(apiKey) method
 
-    urlFiles: string;
+    urlFiles?: string;
 
-    urlFileManager: string;
+    urlFileManager?: string;
     urlFileManager__CSRF?: FuncGetCSRFToken|null;
     urlFileManager__user?: string;
     urlFileManager__password?: string;
@@ -166,7 +166,7 @@ export class Flmngr {
         if (!!Flmngr.commonParams && !!Flmngr.commonParams.apiKey && !!params.apiKey && Flmngr.commonParams.apiKey !== params.apiKey)
             throw "Flmngr was called with another API key before:" + Flmngr.commonParams.apiKey + ". Now you call it with API key: " + params.apiKey + ".\nYou can not mix different API keys on one page";
 
-        if (!Flmngr.commonParams.apiKey && !params.apiKey)
+        if (!Flmngr.commonParams && !params.apiKey)
             throw "You must pass API key on the first Flmngr usage";
 
         let callbacks: {
@@ -201,7 +201,7 @@ export class Flmngr {
 
         // Do not override base parameters on second time calls like Flmngr.open() where parameters may be overridden.
         // API key at this place is guaranteed the same, so there is no need to set it again.
-        if (!!Flmngr.commonParams)
+        if (!Flmngr.commonParams)
             Flmngr.commonParams = params;
 
         if (!!on && !!on.onFlmngrAndImgPenLoaded) {
