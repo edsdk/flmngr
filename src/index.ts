@@ -75,7 +75,7 @@ interface FlmngrOpenParams extends FlmngrCreateParams {
     isMultiple?: boolean;
     allowReorder?: boolean;
 
-    retrieveImageFormats?: string[];
+    createImageFormats?: string[];
 
     onFinish?: (files: FlmngrFileWithFormats[]) => void;
     onCancel?: () => void;
