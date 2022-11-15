@@ -436,3 +436,4 @@ export class Flmngr {
 }
 
 export default Flmngr;
+(window as any).Flmngr = Flmngr;
