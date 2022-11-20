@@ -75,6 +75,10 @@ interface FlmngrOpenParams extends FlmngrCreateParams {
     isMultiple?: boolean;
     allowReorder?: boolean;
 
+    isMaximized?: boolean;
+    showMaximizeButton?: boolean;
+    showCloseButton?: boolean;
+
     createImageFormats?: string[];
 
     onFinish?: (files: FlmngrFileWithFormats[]) => void;
@@ -432,8 +436,31 @@ export class Flmngr {
         });
     }
 
+    // Actually this is already a new API
+    // But if somebody misunderstands this and thinks he has
+    // the legacy API, he can tri to call this method
+    // to get a link to the new API.
+    public static getNewAPI() {
+        return Flmngr;
+    }
 
 }
 
 export default Flmngr;
+
+// In such cases NPM package is imported by the URL:
+// - https://cdn.skypack.dev/flmngr
+//     or
+// - https://unpgk.com/flmngr
+//     or from a similar service like that.
+// Usually such load means a developer does such import from <script> tag directly in HTML.
+// This means we need to provide him with a way to retrieve a link to the API.
+// So we:
+//   1. Add a global variable
+//   2. Call callbacks (if set)
 (window as any).Flmngr = Flmngr;
+if (!!(window as any).onFlmngrAPILoaded)
+    (window as any).onFlmngrAPILoaded();
+if (!!(window as any).onFlmngrAPILoadedArray)
+    for (const callback of (window as any).onFlmngrAPILoadedArray)
+        callback();

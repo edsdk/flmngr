@@ -69,4 +69,4 @@ Flmngr.open({
 
 ## License
 
-This NPM package is licensed under LGPL 2.0 or later.
+This NPM package is licensed under LGPL 3.0 or later.
