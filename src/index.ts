@@ -232,6 +232,8 @@ export class Flmngr {
             });
         }
 
+        (window as any).flmngrIntegration = "npm";
+
         Flmngr.includeJS(((params as any).cdnHost || "https://cloud.flmngr.com" ) + "/cdn/" + Flmngr.commonParams.apiKey + "/flmngr.js");
         Flmngr.includeJS(((params as any).cdnHost || "https://cloud.flmngr.com" ) + "/cdn/" + Flmngr.commonParams.apiKey + "/imgpen.js");
     }
