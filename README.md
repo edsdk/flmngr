@@ -5,12 +5,13 @@
 <h1 align="center" style="margin-top:-20px">Flmngr</h1>
 
 <p align="center">
-    <strong>Flmngr file manager SDK for JS and TS. PHP backend is included.</strong>
+    <strong>Flmngr file manager SDK for JavaScript.<br/>PHP and Node.js backends are included.</strong>
 </p>
 
 <p align="center">
-    <a href="https://flmngr.com/">Website</a>&nbsp;&nbsp;∙&nbsp;&nbsp;&nbsp;&nbsp;<a href="#install">Install</a>&nbsp;&nbsp;∙&nbsp;&nbsp;&nbsp;&nbsp;<a href="#sample">API with samples</a>
+    <a href="https://flmngr.com/">Website</a>&nbsp;&nbsp;∙&nbsp;&nbsp;&nbsp;&nbsp;<a href="#install">Install</a>&nbsp;&nbsp;∙&nbsp;&nbsp;&nbsp;&nbsp;<a href="#api">API</a>&nbsp;&nbsp;∙&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://flmngr.com/doc/samples">Live demos</a>
 </p>
+
 
 [![Flmngr file manager screenshot](https://flmngr.com/img/browsing.jpg)](https://flmngr.com)
 
@@ -46,11 +47,13 @@ Using Yarn:
 yarn add flmngr
 ```
 
-<h2 id="sample">Sample</h2>
+<h2 id="api">API</h2>
 
-[API reference and samples](https://flmngr.com/doc/api) are available on official website.
+[API reference](https://flmngr.com/doc/api) is available on official website.
 
 Here is a sample of just one feature - to open a file manager to select a single file.
+
+Hint: we also have many [live demos](https://flmngr.com/doc/samples) with CodePens.
 
 ```js
 import {Flmngr} from "flmngr";
